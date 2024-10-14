@@ -23,16 +23,6 @@ public class Util {
             return connection;
         }
 
-//        if (Connection==null){
-//            String url = "jdbc:postgresql://localhost:5432/postgres@localhost";
-//            Properties props = new Properties();
-//            props.setProperty("user", "postgres");
-//            props.setProperty("password", "postgres");
-//            props.setProperty("ssl", "true");
-//            Connection = DriverManager.getConnection(url, props);
-//            return Connection;
-//        } else {
-//            return Connection;
-//        }
+
     }
 }
