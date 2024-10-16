@@ -1,7 +1,6 @@
 package jm.task.core.jdbc.util;
 
 import jm.task.core.jdbc.model.User;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

@@ -6,13 +6,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.SQLGrammarException;
-import org.hibernate.query.Query;
 
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceException;
-import java.sql.DatabaseMetaData;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
@@ -28,9 +24,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.createSQLQuery
                     ("CREATE TABLE users(id bigserial not null, name VARCHAR(255), lastname VARCHAR(255), age int2, primary key (id));").executeUpdate();
             session.getTransaction().commit();
-        } catch (SQLGrammarException e ){
-
-        }catch (PersistenceException e){
+        } catch (PersistenceException e){
 
         }
 
@@ -56,10 +50,7 @@ public class UserDaoHibernateImpl implements UserDao {
             User user = new User(name,lastName,age);
             try (Session session = Util.getSessionFactory().openSession()) {
                 transaction = session.beginTransaction();
-
-                if(user != null){
                     session.save(user);
-                }
                 transaction.commit();
             }
         }catch (HibernateException e){
